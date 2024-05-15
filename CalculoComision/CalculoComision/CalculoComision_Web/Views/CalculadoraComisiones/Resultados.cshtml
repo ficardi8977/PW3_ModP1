@@ -1,0 +1,66 @@
+﻿@model IEnumerable<CalculoComision_Web.Models.ComisionViewModel>
+
+@{
+    ViewData["Title"] = "Resultados";
+}
+
+<h1>Resultados</h1>
+<p>
+    <div><a href="/CalculadoraComisiones/Resultados">Resultados</a></div>
+    <div><a href="/CalculadoraComisiones/Calculadora">Calculadora</a></div>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCalculoComision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Plazo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ComisionMensual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Impuesto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Incentivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ganancia)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCalculoComision)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plazo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComisionMensual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Impuesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Incentivo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ganancia)
+            </td>        
+        </tr>
+}
+    </tbody>
+</table>
