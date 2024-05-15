@@ -1,0 +1,43 @@
+﻿@model RegistroVentas_Web.Models.VentaViewModel
+
+@{
+    ViewData["Title"] = "Venta";
+}
+<h4>Venta</h4>
+<div><a href="/Ventas/Resultados">Resultados</a></div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Registrar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Cliente" class="control-label"></label>
+                <input asp-for="Cliente" class="form-control" />
+                <span asp-validation-for="Cliente" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PrecioUnitario" class="control-label"></label>
+                <input asp-for="PrecioUnitario" class="form-control" />
+                <span asp-validation-for="PrecioUnitario" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CantidadVendida" class="control-label"></label>
+                <input asp-for="CantidadVendida" class="form-control" />
+                <span asp-validation-for="CantidadVendida" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Registrar Venta" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

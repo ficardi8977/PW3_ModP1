@@ -1,0 +1,51 @@
+﻿@model IList<RegistroVentas_Web.Models.VentaViewModel>
+
+@{
+    ViewData["Title"] = "Resultados";
+}
+
+<h1>Resultados</h1>
+<div><a href="/Ventas/RegistrarVenta">Registrar venta</a></div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #IdVenta
+            </th>
+            <th>
+                Cliente
+            </th>
+            <th>
+                Cantidad Vendida
+            </th>
+            <th>
+                Precio Unitario($)
+            </th>
+            <th>
+                Total Venta
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdVenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadVendida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalVenta)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
