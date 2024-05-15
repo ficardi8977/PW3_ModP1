@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model PañalViewModel
+
+<h3>Agregar Feriado</h3>
+
+<form action="/Pañales/Calcular" method="post">
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Nombre)
+        @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Edad)
+        @Html.TextBoxFor(model => model.Edad, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(model => model.Edad, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Peso)
+        @Html.TextBoxFor(model => model.Peso, new { @class = "form-control", type = "text" })
+        @Html.ValidationMessageFor(model => model.Peso, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>

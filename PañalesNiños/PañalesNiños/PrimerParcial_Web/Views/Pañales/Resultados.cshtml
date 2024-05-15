@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IList<PañalViewModel>
+
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Peso</th>
+            <th>=</th>
+            <th>Tamaño pañal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var resultado in Model)
+        {
+            <tr>
+                <td>@resultado.Nombre</td>
+                <td>@resultado.Edad</td>
+                <td>@resultado.Peso</td>
+                <td>=</td>
+                <td>@resultado.Tamaño</td>
+            </tr>
+        }
+    </tbody>
+</table>
