@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Barcos_web.Models.BarcoViewModel>
+
+@{
+    ViewData["Title"] = "Resultados";
+}
+
+<h1>Resultados:</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #IdBarco
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Antiguedad
+            </th>
+            <th>
+                Tripulacion Maxima
+            </th>
+            <th>
+                Tasa
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdBarco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antiguedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TripulacionMaxima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tasa)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
